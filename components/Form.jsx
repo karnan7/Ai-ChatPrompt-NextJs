@@ -1,6 +1,6 @@
 
 
-const Form = () => {
+const Form = ({ type, setPost, post, submitting, handleSubmit }) => {
   return (
     <div>Form</div>
   )
