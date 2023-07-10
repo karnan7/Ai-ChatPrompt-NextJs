@@ -9,6 +9,45 @@ const Form = ({ type, setPost, post, submitting, handleSubmit }) => {
       <p className="desc text-left max-w-md">
         {type} and share amazing prompts with the world and let your imagination run wild with any AI-Powered platform
       </p>
+      <form
+      className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
+      onSubmit={handleSubmit}>
+        <label htmlFor="">
+          <span className="font-semibold text-base text-gray-700">Your AI Prompt</span>
+          <textarea 
+          className="form_textarea"
+          value={post.prompt}
+          onChange={(e) => setPost({ ...post,
+          prompt:e.target.value})}
+          placeholder="Write your prompt here"
+          required/>
+        </label>
+
+        <label htmlFor="">
+          <span className="font-semibold text-base text-gray-700">
+            tag{` `}
+            <span className="font-normal">(#product, #webdevelopment, #idea)</span>
+          </span>
+          <input 
+          className="form_input"
+          value={post.tag}
+          onChange={(e) => setPost({ ...post,
+          tag:e.target.value})}
+          placeholder="tag"
+          required/>
+        </label>
+
+        <div className="flex-end mx-6 mb-5 gap-4">
+          <Link href='/' className="text-gray-500 text-sm">Cancel</Link>
+
+          <button
+          type="submit"
+          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+          disabled={submitting}>
+            {submitting ? `${type}...` : type}
+          </button>
+        </div>
+      </form>
     </section>
   )
 }
