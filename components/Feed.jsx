@@ -5,7 +5,6 @@ const Feed = () => {
     <div>
       <div>
         <h1>Post</h1>
-        <p>Write something here.</p>
       </div>
     </div>
   )
