@@ -31,12 +31,12 @@ const CreatePrompt = () => {
             })
           })
           
-          if(response.ok){
-            router.push('/')
-          }
+        if(response.ok){
+          router.push('/')
+        }
 
         }catch(error){
-          console.error(error);
+          console.log("e",error);
         }finally{
           setSubmitting(false);
         }
