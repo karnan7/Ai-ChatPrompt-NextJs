@@ -1,12 +1,10 @@
-
+import PromptCard from "./PromptCard";
 
 const Feed = () => {
   return (
-    <div>
-      <div>
-        <h1>Post</h1>
-      </div>
-    </div>
+    <section>
+      <form action=""></form>
+    </section>
   )
 }
 
