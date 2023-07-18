@@ -17,23 +17,22 @@ const Form = ({ type, setPost, post, submitting, handleSubmit }) => {
           <textarea 
           className="form_textarea"
           value={post.prompt}
-          onChange={(e) => setPost({ ...post,
-          prompt:e.target.value})}
+          onChange={(e) => setPost({ ...post, prompt:e.target.value })}
           placeholder="Write your prompt here"
           required/>
         </label>
 
         <label htmlFor="">
           <span className="font-semibold text-base text-gray-700">
-            tag{` `}
+            Field of Prompt{" "}
             <span className="font-normal">(#product, #webdevelopment, #idea)</span>
           </span>
           <input 
           className="form_input"
           value={post.tag}
-          onChange={(e) => setPost({ ...post,
-          tag:e.target.value})}
-          placeholder="tag"
+          onChange={(e) => setPost({ ...post, tag: e.target.value })}
+          type="text"
+          placeholder="#Tag"
           required/>
         </label>
 
@@ -52,4 +51,4 @@ const Form = ({ type, setPost, post, submitting, handleSubmit }) => {
   )
 }
 
-export default Form
+export default Form;
