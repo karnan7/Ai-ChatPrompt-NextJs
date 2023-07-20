@@ -2,7 +2,7 @@
 
 function Profile() {
   return (
-    <div>Profile</div>
+    <div>Pro</div>
   )
 }
 
