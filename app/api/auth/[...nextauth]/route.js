@@ -17,7 +17,7 @@ const handler = NextAuth({
                 email: session.user.email
             })
     
-            session.user.id = sessionUser.id.toString();
+            session.user.id = sessionUser._id.toString();
     
             return session;
         },
@@ -33,14 +33,14 @@ const handler = NextAuth({
                 //if not create a new user
                 if(!userExists){
                     await User.create({
-                        email:profile.email,
+                        email: profile.email,
                         username: profile.name.replace(" ", "").toLowerCase(),
                         image: profile.picture,
                     })
                 }
                 return true;
             } catch (error) {
-                console.log(error);
+                console.log("Error checking if user exists: ", error.message);
                 return false;
             }
         }
